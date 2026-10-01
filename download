@@ -1,0 +1,21 @@
+# 학생 개인정보와 비밀정보는 절대로 GitHub에 올리지 마세요.
+.streamlit/secrets.toml
+.env
+.env.*
+!.env.example
+private/
+backups/
+uploads/
+*명렬*
+*명부*
+*학생명단*
+*private_roster*
+*credentials*
+*임시비밀번호*
+*.sqlite*
+*.db
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+.DS_Store

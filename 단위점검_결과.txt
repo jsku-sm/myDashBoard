@@ -1,0 +1,39 @@
+검증: 단위·정적 테스트 30개 통과 / 실제 Streamlit UI 테스트 1개는 런타임 패키지 미설치로 건너뜀.
+실제 Supabase 연결 및 25명 동시접속은 미검증.
+
+test_file_extension (test_core.PureLogicTests.test_file_extension) ... ok
+test_file_size (test_core.PureLogicTests.test_file_size) ... ok
+test_image_signature_and_metadata (test_core.PureLogicTests.test_image_signature_and_metadata) ... ok
+test_passwords (test_core.PureLogicTests.test_passwords) ... ok
+test_pdf_signature (test_core.PureLogicTests.test_pdf_signature) ... ok
+test_point_totals (test_core.PureLogicTests.test_point_totals) ... ok
+test_points_empty (test_core.PureLogicTests.test_points_empty) ... ok
+test_random_groups_balanced (test_core.PureLogicTests.test_random_groups_balanced) ... ok
+test_safe_url (test_core.PureLogicTests.test_safe_url) ... ok
+test_seats (test_core.PureLogicTests.test_seats) ... ok
+test_seats_duplicate_rejected (test_core.PureLogicTests.test_seats_duplicate_rejected) ... ok
+test_seats_missing_rejected (test_core.PureLogicTests.test_seats_missing_rejected) ... ok
+test_seats_other_class_rejected (test_core.PureLogicTests.test_seats_other_class_rejected) ... ok
+test_seats_too_few (test_core.PureLogicTests.test_seats_too_few) ... ok
+test_bad_id (test_core.RosterTests.test_bad_id) ... ok
+test_class (test_core.RosterTests.test_class) ... ok
+test_cp949 (test_core.RosterTests.test_cp949) ... ok
+test_csv_formula_injection (test_core.RosterTests.test_csv_formula_injection) ... ok
+test_demo_contains_no_real_names (test_core.RosterTests.test_demo_contains_no_real_names) ... ok
+test_duplicate (test_core.RosterTests.test_duplicate) ... ok
+test_empty (test_core.RosterTests.test_empty) ... ok
+test_vertical (test_core.RosterTests.test_vertical) ... ok
+test_wide_ignores_blanks_and_ref (test_core.RosterTests.test_wide_ignores_blanks_and_ref) ... ok
+test_wrong_class (test_core.RosterTests.test_wrong_class) ... ok
+test_feedback_private_in_shared_task (test_core.StaticChecks.test_feedback_private_in_shared_task) ... ok
+test_no_live_secrets (test_core.StaticChecks.test_no_live_secrets) ... ok
+test_no_public_bucket (test_core.StaticChecks.test_no_public_bucket) ... ok
+test_python_syntax (test_core.StaticChecks.test_python_syntax) ... ok
+test_service_only_login_rpcs (test_core.StaticChecks.test_service_only_login_rpcs) ... ok
+test_teacher_only_sensitive_tables (test_core.StaticChecks.test_teacher_only_sensitive_tables) ... ok
+test_initial_screen_is_login_before_configuration (test_streamlit_ui.StreamlitUI.test_initial_screen_is_login_before_configuration) ... skipped 'Streamlit/Supabase runtime dependencies not installed'
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.024s
+
+OK (skipped=1)

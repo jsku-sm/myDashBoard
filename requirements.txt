@@ -1,0 +1,5 @@
+streamlit>=1.50,<2
+supabase>=2.18,<3
+openai>=1.70,<3
+Pillow>=11,<13
+pypdf>=5,<7
