@@ -2,8 +2,10 @@
 
 **Streamlit 웹앱 / 공통수학1·공통수학2 / 1-1~1-7 / 별도 데이터베이스 없음**
 
-이 폴더 전체가 하나의 앱입니다. `streamlit_app.py` 한 파일만 올리면 실행되지 않습니다.
+이 폴더 전체가 하나의 앱입니다. `app.py` 한 파일만 올리면 실행되지 않습니다.
 실제 학생 명렬·비밀번호·API 키는 포함하지 않았습니다.
+이번 수정본의 권장 실행 파일은 **app.py**입니다. streamlit_app.py도 같은 앱을 실행합니다.
+오류 화면의 기존 app.py·backend.py를 이 수정본으로 교체하세요. 자세한 순서는 UPDATE_GITHUB_ONLY.md를 참고하세요.
 
 ## 1. 무엇이 들어 있나요?
 
@@ -46,6 +48,8 @@
 ZIP을 풀고 **폴더 안의 파일과 하위 폴더 전체**를 코드 저장소 최상위에 올리세요.
 
 ```text
+app.py
+backend.py
 streamlit_app.py
 requirements.txt
 classroom/
@@ -57,7 +61,7 @@ tests/
 README_시작하기.md
 ```
 
-`streamlit_app.py`가 저장소 첫 화면에서 보이는 구조여야 합니다.
+`app.py`가 저장소 첫 화면에서 보이는 구조여야 합니다.
 
 Mac에서 `.streamlit`이 보이지 않으면 Finder에서 **Command + Shift + .**를 누르세요. 실제 `secrets.toml`은 올리지 않습니다. 배포에 필요한 설정이 아직 없으면 앱은 안전한 초기 설정 화면을 보여 줍니다.
 
@@ -80,7 +84,7 @@ Streamlit Community Cloud에서 **Create app**을 선택하고 코드 저장소�
 ```text
 Repository: 내아이디/gussaem-classroom-app
 Branch: main
-Main file path: streamlit_app.py
+Main file path: app.py
 Python: 3.12
 ```
 
@@ -200,26 +204,19 @@ GitHub는 변경 이력을 보관합니다. 앱에서 자료를 보관하거나 
 
 자료 파일 저장 후 목록 저장이 실패하면 목록에 연결되지 않은 암호화 첨부가 남을 수 있습니다. 같은 제출 화면의 재시도는 요청 번호로 중복을 줄이지만, 서로 다른 파일과 목록을 한 번에 저장하는 데이터베이스 트랜잭션은 아닙니다. 실패 시 원본 파일과 입력 내용을 보관하고 등록 여부를 먼저 확인하세요.
 
-## 12. 로컬 데모
+## 12. 내 컴퓨터에서 실행
 
-Python 3.12 설치 후 이 폴더에서 실행합니다.
+Python 3.12 환경에서 다음을 실행합니다. 이 수정본은 로컬 실행에서도 GitHub에 저장합니다.
 
 ```bash
 python -m pip install -r requirements.txt
-python scripts/run_demo.py
+python -m streamlit run app.py
 ```
 
-Mac에서는 `python` 대신 `python3`가 필요할 수 있습니다. VS Code 터미널에서도 같은 명령을 사용합니다.
-
-```text
-교사: teacher / DemoTeacher!2026
-학생: 1101 / DemoStudent!2026
-다른 반: 1201, 1301, 1401, 1501, 1601, 1701 / DemoStudent!2026
-```
-
-데모에서는 각 학급에 가상 학생 2명씩 생성합니다. 데모 데이터는 `.local_data`에만 저장되며, 화면에도 데모임을 표시합니다. **실제 학생 정보 입력 금지.** GitHub 모드에서는 이 데모 계정을 만들지 않습니다. GitHub 연결에 실패해도 자동으로 데모 모드로 바뀌지 않습니다.
-
-로컬에서 운영용 GitHub 설정을 시험할 때는 `.streamlit/secrets.toml.example`을 `.streamlit/secrets.toml`로 복사해 실제 설정을 입력한 뒤 `streamlit run streamlit_app.py`로 실행하세요. `.gitignore`는 실제 Secrets와 데모 데이터 업로드를 제외합니다. GitHub 웹사이트 수동 업로드 시에도 민감 파일을 직접 선택하지 않도록 주의하세요.
+Mac에서 `python` 대신 `python3`가 필요할 수 있습니다.
+`.streamlit/secrets.toml.example`을 `.streamlit/secrets.toml`로 복사해 실제 값을 입력하세요.
+실제 `secrets.toml`은 GitHub에 올리지 않습니다. Secrets가 없으면 초기 설정 화면만 표시됩니다.
+로컬 데모 계정은 만들지 않으며, GitHub 연결 실패 시 로컬 파일로 자동 대체하지 않습니다.
 
 ## 13. 오류가 났을 때
 
@@ -237,27 +234,7 @@ Mac에서는 `python` 대신 `python3`가 필요할 수 있습니다. VS Code �
 
 ## 14. 검증 결과와 남은 확인
 
-동봉한 `TEST_REPORT.md`에 실제 실행한 검사와 실행하지 못한 검사를 구분했습니다. **기능 테스트 39개 + Chromium 구성요소 테스트 1개 통과**입니다. 이 환경에서는 Streamlit 패키지 설치가 네트워크 제한으로 불가능했으므로 **Streamlit 앱 전체 기동·메뉴 화면 통합 테스트와 실제 GitHub/AI 연결 검증은 하지 못했습니다.** 이를 완료했다고 주장하지 않습니다.
+이번 수정본의 검사 결과는 `TEST_REPORT.md`를 확인하세요.
+GitHub HTTP 모의 서버를 사용한 암호화 읽기·쓰기 테스트와 실제 GitHub 연결 검사는 다릅니다.
+실제 데이터 저장소 연결, Streamlit 전체 실행, 학교 기기에서의 다중 접속 여부는 별도로 확인해야 합니다.
 
-자동 검사는 다음 명령으로 실행할 수 있습니다.
-
-```bash
-python -m pip install -r requirements-dev.txt
-python -m pytest tests/test_core.py -q
-python -m pytest tests/test_streamlit_smoke.py -q
-python -m playwright install chromium
-python -m pytest tests/test_browser_component.py -q
-```
-
-## 공식 문서
-
-- Streamlit 배포: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/deploy
-- Streamlit Secrets: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management
-- Streamlit 부분 새로고침: https://docs.streamlit.io/develop/api-reference/execution-flow/st.fragment
-- GitHub 파일 저장 API: https://docs.github.com/en/rest/repos/contents
-- GitHub 사용량 제한: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api
-- GitHub 이력의 민감 정보 제거: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
-- OpenAI 텍스트 생성: https://developers.openai.com/api/docs/guides/text
-- Amplify Classroom: https://amplify.com/classroom/
-- 스노클: https://www.snorkl.app/
-- 풀리수학: https://pulleymath.com/
