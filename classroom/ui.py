@@ -201,7 +201,7 @@ def login_page(svc):
                 except AppError as exc:
                     st.error(str(exc))
             st.divider()
-            st.caption('GitHub 저장 전용 · 2026.10.03-r2')
+            st.caption('GitHub 저장 전용 · GITHUB_ONLY_R3')
             st.caption('처음에는 선생님이 발급한 임시 비밀번호를 사용하세요. 비밀번호를 잊었다면 선생님에게 초기화를 요청하세요.')
 
 

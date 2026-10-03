@@ -2,11 +2,11 @@
 from __future__ import annotations
 import os
 import streamlit as st
-from backend import connect_github
+from .github_connection import connect_github
 from .storage import AppError
 from .ui import css, run_ui, setup_screen
 
-APP_VERSION = "github-only-2026.10.03-r2"
+APP_VERSION = "github-only-r3"
 
 
 def setting(name: str, default: str = "") -> str:
