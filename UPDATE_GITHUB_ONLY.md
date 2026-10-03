@@ -1,6 +1,8 @@
+> **R3 오류 수정:** 먼저 `오류수정_먼저읽기.md`를 읽어 주세요. 현재 실행 파일은 `app.py`입니다.
+
 # Supabase 오류 수정 — GitHub 저장 전용
 
-수정본: **github-only-2026.10.03-r2**
+수정본: **github-only-GITHUB_ONLY_R3**
 
 ## 무엇을 바꿨나요?
 
@@ -108,7 +110,7 @@ TEACHER_INITIAL_PASSWORD는 새 저장소에 첫 교사 계정을 만들 때만 
 
 업로드와 Secrets 저장을 마친 뒤, 앱의 **Manage app → ⋮ → Reboot app**으로 재시작합니다.
 수업 중 사용자가 있는 상태에서 재시작하면 작업이 중단되므로 실제 수업 전에 진행하세요.
-로그인 화면 하단에 **GitHub 저장 전용 · 2026.10.03-r2**가 표시되면 수정본이 실행 중인 것입니다.
+로그인 화면 하단에 **GitHub 저장 전용 · GITHUB_ONLY_R3**가 표시되면 수정본이 실행 중인 것입니다.
 
 같은 `from supabase import create_client` 오류가 계속 나오면, 수정 파일이 아니라 다른 저장소·브랜치·기존 파일을 실행 중인지 확인하세요.
 현재 앱에 연결된 저장소/브랜치의 `app.py` 내용이 `from classroom.application import main`인지 먼저 확인합니다.
