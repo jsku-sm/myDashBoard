@@ -1,0 +1,28 @@
+:root { --ink:#193b37; --muted:#6e8079; --accent:#28735e; }
+.stApp {background:#f5f7f2;color:#193b37;}
+[data-testid="stHeader"] {background:rgba(245,247,242,.88);}
+[data-testid="stSidebar"] {background:#e9efe6;border-right:1px solid #d5dfd5;}
+[data-testid="stSidebar"] [data-testid="stRadio"] label {padding:7px 2px;}
+.block-container {padding-top:2.8rem;padding-bottom:3rem;max-width:1280px;}
+h1,h2,h3 {letter-spacing:-.04em;color:#183d36;}
+h1 {font-size:2.15rem!important;} h2 {font-size:1.6rem!important;}
+[data-testid="stMetric"] {background:white;border:1px solid #dfe7dd;border-radius:18px;padding:18px 22px;}
+[data-testid="stMetricLabel"] {color:#6a7d73;}
+[data-testid="stVerticalBlockBorderWrapper"] {border-radius:18px;}
+[data-testid="stForm"] {background:#fff;border:1px solid #dfe7dd;border-radius:18px;padding:24px;}
+.stButton>button, .stDownloadButton>button, .stLinkButton>a {border-radius:11px;min-height:42px;}
+[data-testid="stTextInput"] input, [data-testid="stTextArea"] textarea {border-radius:10px;}
+.hero {background:linear-gradient(120deg,#163f39,#3e7561);border-radius:25px;color:#fff;
+  padding:36px 40px; margin:0 0 26px;position:relative;overflow:hidden;}
+.hero::after {content:'＋';position:absolute;right:35px;top:-24px;font-size:230px;color:#ffffff0d;}
+.hero .eyebrow {font:600 11px system-ui;letter-spacing:.2em;color:#c4d9b4;}
+.hero h1 {color:#fff;font-size:2.15rem!important;margin:12px 0 10px;}
+.hero p {color:#d8e8de;font-size:16px;margin:0;line-height:1.8;}
+.small-label {color:#7e917f;letter-spacing:.12em;font-size:11px;font-weight:700;}
+.empty-card {padding:30px;border:1px dashed #bcccbc;border-radius:18px;background:#f8faf6;color:#6d8272;text-align:center;}
+.teacher-only {display:inline-block;padding:5px 10px;background:#e0e9d9;color:#416445;border-radius:8px;font-size:12px;font-weight:700;}
+.brand {font-size:22px;font-weight:800;letter-spacing:-1px;padding:8px 0;color:#21493c;}
+.seat-front {border:1px solid #ccd9c9;background:#e9eee5;border-radius:12px;padding:12px;text-align:center;font-weight:700;margin:16px 0;}
+.seat {text-align:center;min-height:80px;background:white;border:1px solid #d9e3d6;border-radius:12px;padding:14px 4px;margin:6px 0;}
+.seat small {color:#819180;font-size:11px;}.seat strong {font-size:16px;display:block;margin-top:4px;}.seat.mine {background:#d8ebd5;border:2px solid #4a8152;}
+@media(max-width:700px){.hero{padding:25px;}.block-container{padding:2rem 1.1rem;}h1{font-size:1.7rem!important;}.seat strong{font-size:13px;}}
