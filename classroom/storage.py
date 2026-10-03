@@ -34,7 +34,7 @@ def valid_path(path: str) -> str:
 
 
 class LocalBackend:
-    """Explicit local demonstration only. Not production persistence."""
+    """Test fixture only. The deployed application never selects this backend."""
     def __init__(self, root: str | Path):
         self.root = Path(root).resolve()
         self.root.mkdir(parents=True, exist_ok=True)

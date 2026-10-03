@@ -145,9 +145,10 @@ def setup_screen():
     if st.session_state.get('_setup_key'):
         st.code(st.session_state['_setup_key'])
         st.warning('기존 데이터가 있다면 새 키로 바꾸지 마세요. 이 키를 잃으면 저장된 데이터를 복구할 수 없습니다.')
-    st.markdown('### 저장소 연결 전, 내 컴퓨터에서 화면 체험')
-    st.code('python -m pip install -r requirements.txt\npython scripts/run_demo.py', language='bash')
-    st.caption('데모에는 가상 학생만 들어 있습니다. 실제 수업용 저장은 GitHub 모드에서 사용하세요.')
+    st.markdown('### 저장 방식')
+    st.write('학생 기록은 GitHub 비공개 데이터 저장소에 암호화된 파일로 저장됩니다.')
+    st.caption('이 수정본은 GitHub 전용입니다. 별도 데이터베이스나 임시 로컬 저장을 사용하지 않습니다.')
+    st.info('기존 앱을 수정한다면 app.py, backend.py, requirements.txt와 classroom·assets 폴더 전체를 교체하세요. 기존 학생 데이터와 암호화키는 삭제하거나 바꾸지 마세요.')
 
 
 def login_page(svc):
@@ -200,10 +201,9 @@ def login_page(svc):
                 except AppError as exc:
                     st.error(str(exc))
             st.divider()
+            st.caption('GitHub 저장 전용 · 2026.10.03-r2')
             st.caption('처음에는 선생님이 발급한 임시 비밀번호를 사용하세요. 비밀번호를 잊었다면 선생님에게 초기화를 요청하세요.')
-            if svc.store.backend.mode == 'demo':
-                st.warning('가상 계정 데모 · 실제 학생 정보 입력 금지')
-                st.code('교사: teacher / DemoTeacher!2026\n학생: 1101 / DemoStudent!2026', language='text')
+
 
 
 @st.fragment(run_every=3)
@@ -883,8 +883,7 @@ def settings_page(svc, token, user, cfg):
     if svc.store.backend.mode == 'github':
         st.code(svc.store.backend.repo)
         st.caption('데이터 저장소는 앱 코드 저장소와 분리하세요. 암호화키는 GitHub가 아닌 Secrets와 안전한 별도 장소에 보관하세요.')
-    else:
-        st.warning('현재는 로컬 데모입니다. 이 데이터는 GitHub에 저장되지 않습니다.')
+
 
 
 def profile_page(svc, token, user):
